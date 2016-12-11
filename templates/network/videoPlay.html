@@ -1,0 +1,13 @@
+{% extends "network/index.html" %}
+{% load staticfiles %}
+
+
+
+{% block middle_block %}
+	{% if video %}
+	<embed src="{{video.url}}" allowFullScreen="True" width="480" height="350"></embed>
+		<!-- <a href="{{ video.url }}">{{ video.name }} </a> -->	    
+	        <span id="ppp">已经有{{video.count}}人学习</span>	
+	
+	{% endif %}
+{% endblock middle_block %}

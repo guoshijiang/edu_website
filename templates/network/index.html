@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+<title>学习类网站开发先锋队</title>
+<meta charset="UTF-8">
+<meta name=”viewport” content=”width=device-width,initial-scale=1”>
+{% block fileenter_block%}
+<link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "bootstrap/css/css.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "bootstrap/css/css1.css" %}" rel="stylesheet" type="text/css">
+<script src="{% static "bootstrap/js/jquery.min.js" %}"></script>
+<script src="{% static "bootstrap/js/jquery.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+<script src="{% static "bootstrap/js/js.js" %}"></script>
+<script src="{% static "bootstrap/js/index.js" %}"></script>
+{% endblock %}
+</head>
+<body>
+
+{% if user.is_authenticated %}
+    <h1>itcastsubject says... hello {{ user.username }}!</h1>
+{% else %}
+    <h1>itcastsubject says... hello world!</h1>
+{% endif %}
+
+
+    {% block header_block %}
+    <!--网页顶端开始-->
+    <div id="topping">
+        <span>欢迎光临先锋IT学习资源库、希望您学习愉快<span>
+            </div>
+            <!--导航条开始-->
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/network/videoPage/">视频大数据中心</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div id="navgitor" class="nav navbar-nav">
+                            <span><a href="/network/articlesPage/">技术文库 </a></span>
+                            <span><a href="/network/testPage/">经典题库</a></span>
+                            <span><a href="/network/personinfoPage/">个人中心</a></span>
+                        </div>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div id="nav-form" class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入你想找的视频.......">
+                                <button  type="submit" class="btn btn-info">搜索</button>
+                            </div>	 
+                        </form>
+                        <div id="nav-reg" class="nav navbar-nav navbar-right">
+                            <span><a href="/network/userLogin/">登录</a></span>
+                            <span><a href="/network/register/">注册</a></span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            {% endblock %}
+            <!--导航条接结束-->
+            <!--旋转木马开始-->
+            <div class="container">
+            {% block middle_block %}
+            <div class="wrap">
+                <div class="slide">
+                    <ul>
+                        <li><a href="#"><img src="{% static "images/slide1.jpg" %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static "images/slide2.jpg" %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static "images/slide3.jpg" %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static "images/slide4.jpg" %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static "images/slide5.jpg" %}" alt=""></a></li>
+                    </ul>
+                    <div class="arrow">
+                        <a href="javascript:;" class="prev"></a>
+                        <a href="javascript:;" class="next"></a>
+                    </div>
+                </div>
+            </div>
+            <!--旋转木马结束-->
+            <!--栅格系统局部1开始-->
+            <!--111-->
+            <div id="subject">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ><a href="#">Python</a></li>
+                    <li role="presentation"><a href="#">C++</a></li>
+                    <li role="presentation"><a href="#">Linux</a></li>
+                </ul>
+            </div>
+            <!--111-->
+            <!--222-->
+
+<!-- 学科视频显示模块 -->
+<script >
+function mouseOver(id){document.getElementById(id).src="{% static "images/python2.png" %}"}
+function mouseOut(id){document.getElementById(id).src="{% static "images/python1.jpg" %}"}
+</script>
+
+            <div class="row">
+                <ul>
+                    {% if categories1 %}
+                        {% for video in categories1 %}             
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <li>
+                            <a href="/network/videoPlay/{{ video.slug}}">  <img id ="{{ video.slug}}"  onmouseover="mouseOver('{{ video.slug}}')"  onmouseout="mouseOut('{{ video.slug}}')" src="{% static "images/python1.jpg" %}" alt=""></a>  
+                            </li>
+                            <div class="caption">
+                                <a href=""></a>
+                                <h4>{{video.title}}</h4>
+                                <span id="ppp">已经有{{video.count}}人学习</span>
+                            </div>
+                        </div>
+                    </div>
+                        {% endfor %}         
+                    {% endif %}
+                </ul>
+            </div>
+            <!--222-->
+            <!--栅格系统局部1结束-->
+
+            <!--栅格系统局部2开始-->
+            <!--111-->
+            <br/>
+            <div id="object">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ><span>学习路线图<span></li>
+                        </ul>
+                    </div>
+                    <!--111-->
+                    <!--222-->
+                    <div class="row">
+                        <ul>
+                        {% if categories2 %}
+                        {% for video in categories2 %}             
+                            <div class="col-sm-6 col-md-3">
+                                <div class="thumbnail">
+                                    <li>
+                                    <a href="/network/videoPlay/{{ video.slug}}"> <img id ="{{ video.slug}}"  onmouseover="mouseOver('{{ video.slug}}')"  onmouseout="mouseOut('{{ video.slug}}')" src="{% static "images/python1.jpg" %}" alt=""></a>    
+                                    </li>
+                                    <div class="caption">
+                                        <a href=""></a>
+                                        <h4>{{video.title}}</h4>
+                                        <span id="ppp">已经有{{video.count}}人学习</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}         
+                        {% endif %}
+                        </ul>
+                    </div>
+                    <!--222-->
+                    <!--栅格系统局部1结束-->
+                    <!--收尾开始-->
+                    <!--111-->
+                    {% endblock %}
+                    {% block tail_block %}
+                    <div id="tail" style="margin-top: 15px">
+                        <div id="tail-two">
+                            <div id="tail-three" class="nav nav-tabs">
+                                <span role="presentation" ><a style="font-size: 20px" href="#">友情链接</a></span>
+                                <span role="presentation"><a style="font-size: 20px" href="#">合作企业</a></span>
+                            </div>
+                        </div>
+                        <div id="friend">
+                            <a href="#">CSND</a>
+                            <a href="#">黑马程序员</a>
+                            <a href="#">传智播客</a>
+                            <a href="#">先锋学习网</a>
+                        </div>
+                    </div>
+                    <!--111-->
+                    <!--收尾结束-->
+
+                    <!--底部开始-->
+                    <div id="bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock %}
+                    <!--底部结束-->
+                </div>
+                </body>
+                </html>

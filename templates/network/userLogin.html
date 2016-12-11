@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>network</title>
+</head>
+<body>
+
+	<h1> login to networkEducation </h1>
+	<form id="login_form" method="post" action="/network/userLogin/"> <!--如果是登陆为get请求,跳到此页面,如果是为post请求则跳到其他页面,这两种情况在views里面的同一个视图函数user_login里面通过if else实现了-->
+		{% csrf_token %}
+		username: <input type="text" name="username" value="" size='20'>
+		<br/>
+		password:  <input type="password" name="password" value="" size="20">
+		<br/>
+
+		<input type="submit"value="submit">
+	</form>
+</body>
+</html>

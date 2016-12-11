@@ -1,0 +1,100 @@
+{% extends "network/articles.html" %}
+{% load staticfiles %}
+
+ <!--the frame of articel start-->
+{% block first_block %}
+
+<div id="totalbox">
+
+<div id="frame2" >
+     <span>
+    <div class="panel panel-info">
+      <div class="panel-body">
+      文章内容
+          <p>
+          <h2>{{articles.title}}</h2>
+
+          {% if articles %}
+          
+          {{articles.content}}  
+          
+          <br/><br/>已经有{{articles.count}}人阅读  
+          {% endif %}
+          </p>
+      </div>
+    </div>
+    </span>
+  </div>
+
+<!--fanye code start-->
+<div id="contentPages">
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">上一页</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">下一页</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+<!--fanye code end-->
+  </div>
+ <!--the frame of articel end-->
+ <!--more information about this paper start-->
+ <div id="tail">
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">热门评论</a></li>
+  <li role="presentation"><a href="#">收藏次数</a></li>
+  <li role="presentation"><a href="#">点赞次数</a></li>
+   <li role="presentation"><a href="#">分享次数</a></li>
+</ul>
+<div id="text">
+  <p>热门评论</p>
+  <br/>
+  <p>导航条是在您的应用或网站中作为导航页头的响应式基础组件。它们在移动设备上可以折叠（并且可开可关），且在视口（viewport）宽度增加时逐渐变为水平展开模式。</p>
+  <p>导航条是在您的应用或网站中作为导航页头的响应式基础组件。它们在移动设备上可以折叠（并且可开可关），且在视口（viewport）宽度增加时逐渐变为水平展开模式。</p>
+<div>
+ <div>
+ <!--more information about this paper end-->
+ <!--good or bad start-->
+ <div id='goodbutton'>
+   <p id="gd">
+              <button id ='aa1'type="button" class="btn btn-primary btn-lg" onclick="javascript: goodPlus('{{articles.name}}')"> 顶 {{articles.goodcount}}</button>
+              <button type="button" class="btn btn-default btn-lg"> 踩</button>
+
+  <script>
+  function goodPlus(name)
+  {
+
+      $.getJSON("/network/articlesGoodButton/",{'name':name},function(ret){
+        
+        $('#goodbutton').append('<button id ="ida1" type="button" class="btn btn-primary btn-lg" onclick="javascript: goodPlus('+ret.fields.slug+')"> 顶 '+ret.fields.goodcount+'</button> <button type="button" class="btn btn-default btn-lg"> 踩</button>') 
+        
+
+      })
+
+      location.reload()
+  }
+  </script>
+
+  
+</p>
+ </div>
+ <!--good or bod end-->
+
+ {% endblock first_block %}
+
+
+
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta charset="UTF-8">
+<title>classic static file</title>
+<!--load bootstrap static file start-->
+<link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "bootstrap/css/css.css" %}" rel="stylesheet" type="text/css">
+<script src="{% static "bootstrap/js/jquery.min.js" %}"></script>
+<script src="{% static "bootstrap/js/jquery.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+<!--load bootstrap static file end-->
+</head>
+<body>
+ <!--the header of the article web page start-->
+ <div id="a_header">
+   <div class="left">
+           <div class="dropdown">
+        <span class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        个人中心
+        <span class="caret"></span>
+       </span>
+       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">申请认证</a></li>
+        <li><a href="#">我的课程</a></li>
+        <li><a href="#"> 我的任务</a></li>
+        </ul>
+        </div>
+   </div>
+   <div class="right">
+     <span><a href="#">用户名</a></span>
+     <span><a href="#">加入vip</a></span>
+     <span><a href="#">网站首页</a></span>
+   </div>
+ </div>
+ <!--the header of the article web page end-->
+ <!--search like sougo frame start-->
+ <div id="search">
+      <div class="row">
+      <div class="col-md-2"></div>
+       <div class="col-md-8">
+              <div id="input-group" class="input-group input-group-lg">
+             <span class="input-group-addon">相关文章搜索:</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="请输入你想找的文章...">
+            <span class="input-group-addon">搜索</span>
+              </div>
+       </div>
+      <div class="col-md-2"></div>
+      </div>
+ </div>
+ <!--search like sougo frame end-->
+
+ {% block first_block %}
+ <!--the frame of articel start-->
+ }
+<div id="totalbox">
+  
+  <div id="frame1" >
+  <span>
+    <div class="panel panel-info">
+      <div class="panel-body">
+        全部分类
+
+      </div>
+    </div>
+  </span>
+    <ul id="title">
+            {% if  subjects %}
+
+            {% for subj in subjects  %}
+    
+            <li><a href="/network/articlesSelected/{{ subj.slug}}" class="afont kindfont ">{{ subj.name}}</a></li>    
+    
+            {% endfor %}
+    
+            {% endif %}
+      <div class="kindline">
+      </div>  
+      </div> 
+
+
+  <!--title of the papers start-->
+  <div id="papertitle">
+  <ul>
+  <span>
+      <div class="panel panel-info">
+      <div class="panel-body">
+      文章标题
+         {% if categories %}
+         <ul>
+         {% for articles in  categories %}
+
+         <li><a href="/network/articles/{{ articles.slug}}">{{articles.title}}</a></li>
+
+         {% endfor %}
+         
+         {% endif %}
+          </ul>
+  </span>
+  </ul>
+  </div>
+
+<!--title of the papers end-->
+
+
+<!--fanye code start-->
+<div id="contentPages">
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">上一页</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">下一页</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+<!--fanye code end-->
+  </div>
+ <!--the frame of articel end-->
+
+{% endblock first_block %}
+
+<div id="tail">
+                        <div id="tail-two">
+                            <div id="tail-three" class="nav nav-tabs">
+                                <span role="presentation" ><a href="#">友情链接</a></span>
+                                <span role="presentation"><a href="#">合作企业</a></span>
+                            </div>
+                        </div>
+                        <div id="friend">
+                            <a href="#">CSND</a>
+                            <a href="#">黑马程序员</a>
+                            <a href="#">传智播客</a>
+                            <a href="#">先锋学习网</a>
+                        </div>
+                    </div>
+                    <!--111-->
+                    <!--收尾结束-->
+
+                    <!--底部开始-->
+                    <div id="bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <!--底部结束-->
+                </div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+{% extends "network/index.html" %}
+{% load staticfiles %}
+
+{% block middle_block %}
+<div id="p_top">
+    <span>我的位置: 个人中心</span>
+    <span class="info">我的信息</span>
+</div>
+<div id="bigbox">
+<!--left box start-->
+   <div class="p_left">
+
+       <span>
+      <div class="panel panel-info">
+        <div class="panel-body">
+           <span sytle="font-size:16px">个人中心</span>
+        </div>
+      </div>
+    </span>
+
+<div style="margin-left: 20px">
+  <ul id="title">
+      <li>我的基本信息</li>
+      <div  style="margin-top:10px;margin-left: 30px" >
+        <a href="#" class="afont kindfont ">查看个人信息</a> <br/>      
+        <a href="#" class="afont kindfont "> 账号安全</a> <br/>       
+        <a href="#" class="afont kindfont ">手机核对</a>  <br/>    
+      </div>
+
+      <div class="kindline"></div>  
+
+      <li>我学习的任务</li>  
+      <div  style="margin-top:10px;margin-left: 30px" >
+        <a href="#" class="afont kindfont ">已完成任务</a> <br/>      
+        <a href="#" class="afont kindfont ">未完成任务</a> <br/>           
+      </div>
+
+       <div class="kindline"></div>     
+
+       <li>我的题库</li>  
+      <div  style="margin-top:10px;margin-left: 30px" >
+        <a href="#" class="afont kindfont ">已做过得题库</a> <br/>      
+        <a href="#" class="afont kindfont ">未做过的题库</a> <br/> 
+        <a href="#" class="afont kindfont ">收藏的题目</a> <br/>           
+      </div>
+      
+      <div class="kindline"></div>  
+        <li>我的题库</li>  
+      <div  style="margin-top:10px;margin-left: 30px" >
+        <a href="#" class="afont kindfont ">已做过得题库</a> <br/>      
+        <a href="#" class="afont kindfont ">未做过的题库</a> <br/> 
+        <a href="#" class="afont kindfont ">收藏的题目</a> <br/>           
+      </div>
+
+        <div class="kindline"></div>  
+
+         <li>密保中心</li>  
+      <div  style="margin-top:10px;margin-left: 30px" >
+        <a href="#" class="afont kindfont "> 密保问题</a> <br/>      
+        <a href="#" class="afont kindfont ">修改密码</a> <br/>           
+      </div>
+    </ul>
+    </div>
+   </div>
+   <!--left box end-->
+   <!--right box start-->
+  <div class="p_right">
+    <a href="#"><img src="{% static "images/per.png" %}" alt=""></a>
+    <div style="margin:100px; margin-top:100px;font-size: 30px;font-weight:bold;"><span>欢迎登陆先锋学习网站，祝你学习愉快</span></div>
+  </div>
+  <!--right box end-->
+</div>
+
+
+
+
+{% endblock %}
+   
+

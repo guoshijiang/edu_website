@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>networkforeducation</title>
+</head>
+<body>
+	<h1>Register with networkforeducation</h1>
+
+	{% if registered %}
+		<strong>Thank You for registering</strong>
+		<a href="/network/">Return to the HomePages</a>
+	{% else %}
+		<strong>REGISTER HERE !</strong>
+		<form id ='user_form' method="post" action="/network/register/",enctype="multipart/from-data">
+		<!--enctype可以使浏览器以特定的方式把表单返回数据库-->
+			{% csrf_token %}
+			{{user_form.as_p}}
+			{{profile_form.as_p}}
+			<input type="submit" name="submit" value="Register">
+		</form>	
+	{% endif %}
+</body>
+</html>

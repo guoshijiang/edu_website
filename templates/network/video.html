@@ -1,0 +1,247 @@
+{% extends "network/index.html" %}
+{% load staticfiles %}
+
+{% block middle_block %}
+
+
+
+<div  class="row">
+  <div  class="mainl col-md-2">
+  	<div  class="nav navbar-inverse nav-stacked nav-tabs nav-justified">
+		  <span><a class="navbar-brand" href="#">全部分类</a></span>
+	</div>
+	<div  class="kind">
+	<h3>移动开发</h3>
+	{% if  subjects %}
+	{% for  subj in subjects  %}
+		<!-- <a id ="{{subj.slug}}" href="/network/videoSelected/{{ subj.slug}}" class="afont kindfont " >{{ subj.name}}</a>-->				
+		<button id ="{{subj.slug}}"  class="afont kindfont " onclick="javascript:SubjectSelected('{{subj.slug}}')">{{ subj.name}}</button>			
+	{% endfor %}	
+	{% endif %}
+
+	<div class="kindline"></div>
+	<h3>后端开发</h3>
+	<a href="/course/c26.html" class="afont kindfont ">Java</a>				
+	<a href="/course/c29.html" class="afont kindfont ">PHP</a>				
+	<a href="/course/c27.html" class="afont kindfont ">Python</a>				
+	<a href="/course/c28.html" class="afont kindfont ">ASP.NET</a>				
+	<a href="/course/c55.html" class="afont kindfont ">C语言</a>				
+	<a href="/course/c56.html" class="afont kindfont ">C++</a>				
+	<a href="/course/c57.html" class="afont kindfont ">Scala</a>
+	<div class="kindline"></div>
+	<h3>前端开发</h3>
+	<a href="/course/c19.html" class="afont kindfont ">JavaScript</a>				
+	<a href="/course/c8.html" class="afont kindfont ">HTML/CSS</a>				
+	<a href="/course/c9.html" class="afont kindfont ">AngularJS</a>				
+	<a href="/course/c10.html" class="afont kindfont ">Bootstrap</a>				
+	<a href="/course/c11.html" class="afont kindfont ">jQuery</a>				
+	<a href="/course/c17.html" class="afont kindfont ">Node.js</a>				
+	<a href="/course/c47.html" class="afont kindfont ">响应式</a>				
+	<a href="/course/c48.html" class="afont kindfont ">JS设计模式</a>				
+	<a href="/course/c49.html" class="afont kindfont ">MVC</a>				
+	<a href="/course/c50.html" class="afont kindfont ">Canvas</a>				
+	<a href="/course/c51.html" class="afont kindfont ">HTML5+CSS3</a>				
+	<a href="/course/c52.html" class="afont kindfont ">手机网页开发</a>				
+	<a href="/course/c53.html" class="afont kindfont ">Jui</a>				
+	<a href="/course/c54.html" class="afont kindfont ">Easyui</a>
+	<div class="kindline"></div>				
+	<h3>数据库</h3>
+							
+	<a href="/course/c81.html" class="afont kindfont ">MySQL</a>				
+	<a href="/course/c82.html" class="afont kindfont ">Oracle</a>				
+	<a href="/course/c62.html" class="afont kindfont ">SQLite</a>				
+	<a href="/course/c84.html" class="afont kindfont ">Redis</a>				
+	<a href="/course/c85.html" class="afont kindfont ">MongoDB</a>				
+	<a href="/course/c86.html" class="afont kindfont ">SQL Server</a>				
+	<a href="/course/c87.html" class="afont kindfont ">Memcached</a>
+	<div class="kindline"></div>				
+	<h3>云计算</h3>
+							
+	<a href="/course/c88.html" class="afont kindfont ">Docker</a>				
+	<a href="/course/c89.html" class="afont kindfont ">Hadoop</a>				
+	<a href="/course/c90.html" class="afont kindfont ">Hbase</a>				
+	<a href="/course/c91.html" class="afont kindfont ">Hive</a>				
+	<a href="/course/c92.html" class="afont kindfont ">Storm</a>				
+	<a href="/course/c93.html" class="afont kindfont ">Spark</a>				
+	<a href="/course/c94.html" class="afont kindfont ">Mahout</a>				
+	<a href="/course/c95.html" class="afont kindfont ">Open Stack</a>				
+	<a href="/course/c96.html" class="afont kindfont ">Cloud Stack</a>				
+	<a href="/course/c97.html" class="afont kindfont ">虚拟化</a>				
+	<a href="/course/c98.html" class="afont kindfont ">YARN</a>				
+	<a href="/course/c99.html" class="afont kindfont ">Flume</a>				
+	<a href="/course/c100.html" class="afont kindfont ">Kafka</a>				
+	<a href="/course/c101.html" class="afont kindfont ">KVM</a>				
+	<a href="/course/c102.html" class="afont kindfont ">Openvswitch</a>				
+	<a href="/course/c103.html" class="afont kindfont ">Ceph</a>				
+	<a href="/course/c126.html" class="afont kindfont ">Redis</a>
+	<div class="kindline"></div>				
+	<h3>服务器</h3>
+	<a href="/course/c104.html" class="afont kindfont ">Linux/Unix</a>				
+	<a href="/course/c105.html" class="afont kindfont ">Nginx</a>				
+	<a href="/course/c106.html" class="afont kindfont ">Tomcat</a>				
+	<a href="/course/c107.html" class="afont kindfont ">Apache</a>				
+	<a href="/course/c108.html" class="afont kindfont ">IIS</a>
+	<div class="kindline"></div>				
+	<h3>界面</h3>
+	<a href="/course/c109.html" class="afont kindfont ">QT</a>				
+	<a href="/course/c110.html" class="afont kindfont ">MFC</a><div class="kindline">
+	</div>				
+	<h3>项目管理工具</h3>
+							
+	<a href="/course/c111.html" class="afont kindfont ">SVN</a>				
+	<a href="/course/c112.html" class="afont kindfont ">Git</a>				
+	<a href="/course/c113.html" class="afont kindfont ">项目集成</a>				
+	<a href="/course/c114.html" class="afont kindfont ">Maven</a>				
+	<a href="/course/c115.html" class="afont kindfont ">CocoaPods</a>
+	<div class="kindline"></div>				
+	<h3>脚本语言</h3>
+	<a href="/course/c116.html" class="afont kindfont ">Shell</a>				
+	<a href="/course/c117.html" class="afont kindfont ">Lua</a>
+	<div class="kindline"></div>				
+	<h3>网页平面设计</h3>
+	<a href="/course/c37.html" class="afont kindfont ">Photoshop</a>				
+	<a href="/course/c38.html" class="afont kindfont ">Illustrator</a>				
+	<a href="/course/c39.html" class="afont kindfont ">Flash</a>				
+	<a href="/course/c65.html" class="afont kindfont ">Dreamweaver</a>				
+	<a href="/course/c66.html" class="afont kindfont ">Ui设计</a>				
+	<a href="/course/c67.html" class="afont kindfont ">电商设计</a>				
+	<a href="/course/c68.html" class="afont kindfont ">网页版式</a>
+	<div class="kindline"></div>				
+	<h3>网络营销</h3>
+	<a href="/course/c118.html" class="afont kindfont ">网站策划建设</a>				
+	<a href="/course/c119.html" class="afont kindfont ">移动端建站</a>				
+	<a href="/course/c120.html" class="afont kindfont ">SEO</a>				
+	<a href="/course/c121.html" class="afont kindfont ">SEM</a>				
+	<a href="/course/c122.html" class="afont kindfont ">文案策划</a>				
+	<a href="/course/c123.html" class="afont kindfont ">网络推广</a>				
+	<a href="/course/c124.html" class="afont kindfont ">新媒体运营</a>				
+	<a href="/course/c125.html" class="afont kindfont ">电子商务运营</a>
+	<div class="kindline"></div>				
+	<h3>传智好毕设</h3>
+	<a href="/course/c128.html" class="afont kindfont ">Java</a>				
+	<a href="/course/c129.html" class="afont kindfont ">.Net</a>				
+	<a href="/course/c130.html" class="afont kindfont ">PHP</a>				
+	<a href="/course/c131.html" class="afont kindfont ">网页平面</a>				
+	<a href="/course/c132.html" class="afont kindfont ">C++</a>
+  </div>
+  </div>
+
+
+<!--shange start-->
+  <div class="col-md-10">
+
+<!--dongtaitustart-->
+<div style="height: 415px">
+  <div class="test">
+    <div class="timu">
+      <div>
+        <span><a href="#"><img style="width:943px" src="{% static "images/slide1.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img style="width:943px" src="{% static "images/slide2.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img style="width:943px" src="{% static "images/slide3.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img style="width:943px" src="{% static "images/slide4.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img style="width:943px" src="{% static "images/slide5.jpg" %}" alt=""></a></span>
+      </div>
+      <div class="array">
+        <a href="javascript:;" class="qian"></a>
+        <a href="javascript:;" class="hou"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--dongtaituend-->
+
+
+  <!---daohang start-->
+  <div class="row">
+  <div class="col-md-12">
+  <div margin-top="10px">
+  <div class="btn-group btn-group-lg" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">全部</button>
+
+  <div class="btn-group  btn-group-lg" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       最新
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">最新</a></li>
+      <li><a href="#">最新</a></li>
+    </ul>
+  </div>
+
+<div class="btn-group btn-group-lg" role="group">
+    <button type="button" class="btn  btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       课程类型
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+   <li><a href="#">全部</a></li>
+      <li><a href="#">课程精讲</a></li>
+      <li><a href="#">项目实战</a></li>
+    </ul>
+  </div>
+
+  <div class="btn-group  btn-group-lg" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     难度等级
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+    <li><a href="#">全部</a></li>
+      <li><a href="#">初级</a></li>
+      <li><a href="#">中级</a></li>
+       <li><a href="#">高级</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+</div>
+ <!---daohang end-->
+ <!--tupiankaishi-->
+<script >
+$(document).ready(
+)
+	function SubjectSelected(subject){
+			//alert('clicked');
+			$('#vide1').empty()
+			$.getJSON("/network/showSubjectVideos/",{'subj':subject},function(ret){
+				for(var i in ret)
+					{
+						//$.each(ret,function(){
+						$('#vide1').append(' <div  class="col-sm-6 col-md-4"> <div class="thumbnail"><span>  <a href="/network/videoPlay/'+ret[i].fields.slug+'"> <img  id="'+ret[i].fields.slug+'" onmouseover="mouseOver(\''+ret[i].fields.slug+'\')"  onmouseout="mouseOut(\''+ret[i].fields.slug +'\')" src="{% static "images/python1.jpg" %}" alt=""></a> </span><div class="caption"> <a href=""></a>    <h4>'+ret[i].fields.title+'</h4><span id="ppp">已经有'+ret[i].fields.count+'人学习</span></div></div></div>')
+
+						//})
+					}
+			})
+		}
+	function mouseOver(id){document.getElementById(id).src="{% static "images/python2.png" %}"}
+	function mouseOut(id){document.getElementById(id).src="{% static "images/python1.jpg" %}"}
+
+</script>
+
+  <div id ='vide1' class="row">
+     	{% if categories %}
+     	{% for video in categories %}    
+                    <div  class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <span>
+                            <a href="/network/videoPlay/{{ video.slug}}"> <img id ="{{ video.slug}}"  onmouseover="mouseOver('{{ video.slug}}')"  onmouseout="mouseOut('{{ video.slug}}')" src="{% static "images/python1.jpg" %}" alt=""></a>  
+                            </span>
+                            <div class="caption">
+                                <a href=""></a>
+                                <h4>{{video.title}}</h4>
+                                <span id="ppp">已经有{{video.count}}人学习</span>
+                            </div>
+                        </div>
+                    </div>
+               {% endfor %}         
+               {% endif %}
+  </div>
+
+ <!--tupianjieshu-->
+</div>
+<!--shange end-->
+</div>
+{% endblock %}
+	 

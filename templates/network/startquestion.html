@@ -1,0 +1,59 @@
+{% extends "network/test.html" %}
+{% load staticfiles %}
+
+{% block unextends_block%}
+<div class="container" style="padding:0px; background-color:#fff">
+<!--question header pages start-->
+<div id="q_header">
+
+{% if categories %}
+  {% for test in  categories%}
+    <span><a href="/network/" alt="">首页</a></span>
+     <span>&gt;</span>
+    <span><a href="#" alt="">{{test.subj}}</a></span>
+    <span>&gt;</span>
+    <span style="color: gray">{{test.title}}</span>   
+  {% endfor %}
+{% endif %}
+</div>
+<!--question header pages end-->
+{% if categories %}
+  {% for test in  categories%}
+<div id="s_start" class="row" style="margin-top:10px">
+  <div id="s_left" class="col-md-9">
+  
+  <div class="row">
+
+  <div class="col-md-4">
+  <div style="margin-top: 15px;"><span style="color: gray;margin-top:15px;font-size:20px;font-weight:bold;">{{test.title}}</span></div>
+  <div style="margin-top:20px;"><img src="{% static "images/target.png" %}"></div>
+  </div>
+  <div class="col-md-8">
+  <div style="margin-left: 0px;margin-top:80px;"><span style="font-size:18px;">客观题:选择题{{test.count}}道</span><br>
+<span style="font-size:18px;">完成时间:{{test.finishtime}}分钟</span><br>
+<span style="font-size:18px;">难度系数:{{test.diff}}星</span><br>
+<span style="font-size:18px;">满分:{{test.score}} 分</span><br>
+  </div>
+ </div>
+    
+</div>
+    <div style="margin-left: 150px;font-size:15px;"><span>1.请在规定时间完成试卷内全部题目，考试时间结束，系统将自动交卷</span><br>
+    <span>2.所有题目可通过答题卡返回修改，点击提前交卷后试卷提交，将无法继续答案，请谨慎提交。</span><br>
+    <span>3.请诚信答题，独立完成。</span></br>
+    <span>4.祝你好运。</span></div>
+
+<div class="btn-group " role="group" style="margin-left: 350px; margin-bottom: 20px;">
+    <a href="/network/questionPage/"><button type="button" class="btn btn-lg btn-info">开始答题</button></a>
+  </div>
+  </div>
+    {% endfor %}
+{% endif %}
+<!--argument waiting start-->
+  <div id="s_right" class="col-md-3"> 
+  <img src="{% static "images/zhanwei1.jpg" %}">
+  <img src="{% static "images/zhanwei2.jpg" %}">
+  </div>
+  <!--argument waiting end-->
+</div>
+</div>
+{% endblock %}

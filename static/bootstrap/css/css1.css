@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.test
+{
+	width:1171px;
+	height:260;
+}
+.timu
+{
+	height:260;
+	position:relative;
+}
+.timu span
+{
+	position:absolute;
+	list-style:none;
+}
+
+.timu span img
+{
+	width:100%;
+}
+.array
+{
+
+	display:none;
+}
+.qian, .hou
+{
+	width:30px;
+	height:80px;
+	position:absolute;
+	top:100%;
+	margin-top:245px;
+	background: url(../images/prev.jpg) no-repeat;
+	z-index:99;
+}
+.qian
+{
+	margin-left:140px;
+}
+.hou
+{
+	right:0;
+	background-image: url(../images/next.jpg);
+}

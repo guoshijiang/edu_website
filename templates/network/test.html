@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<title>考试题库</title>
+<meta charset="UTF-8">
+<meta name=”viewport” content=”width=device-width,initial-scale=1”>
+<link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "bootstrap/css/css.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "bootstrap/css/css1.css" %}" rel="stylesheet" type="text/css">
+<script src="{% static "bootstrap/js/jquery.min.js" %}"></script>
+<script src="{% static "bootstrap/js/jquery.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+<script src="{% static "bootstrap/js/index.js" %}"></script>
+</head>
+<body style="padding:0px; background-color:#fff">
+<div id="t_top"></div>
+<div class="container" style="padding:0px; background-color:#fff">
+<div id="tatolwebpage">
+<!--the header of the test page start-->
+<div id="t_header">
+    <div class="left">
+    	<img src="{% static "images/header1.gif" %}" alt=""/>
+    </div>
+    <div class="right">
+    	<div class="picture1"><img src="{% static "images/header2.gif" %}" alt=""/></div>
+    	<div class="picture2"><img src="{% static "images/header3.gif" %}" alt=""/></div>
+    </div>
+</div>
+<!--the header of the test page end-->
+
+<!--nav of the test page start-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">测试题库</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+	 <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">C语言 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="#">C基础</a></li>
+            <li><a href="#">C进阶</a></li>
+            <li><a href="#">C高级</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">数据结构</a></li>
+            <li><a href="#">动态库</a></li>
+          </ul>
+        </li>
+
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">C++语言 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">C++基础</a></li>
+            <li><a href="#">C++进阶</a></li>
+            <li><a href="#">C++高级</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">设计模式</a></li>
+            <li><a href="#">STL编程</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Python <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Python基础</a></li>
+            <li><a href="#">Python进阶</a></li>
+            <li><a href="#">Python高级</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Django框架</a></li>
+            <li><a href="#">其他框架</a></li>
+          </ul>
+        </li>
+
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JAVA <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">JAVA基础</a></li>
+            <li><a href="#">JAVA进阶</a></li>
+            <li><a href="#">JAVA高级</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Structs</a></li>
+            <li><a href="#">Spring</a></li>
+            <li><a href="#">Hibelate</a></li>
+          </ul>
+        </li>
+
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">前端框架 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Bootstrap框架</a></li>
+            <li><a href="#">JQuery代码库</a></li>
+            <li><a href="#">AngularJs</a></li>
+            <li><a href="#">NodeJS</a></li>
+            <li><a href="#">YUI代码库</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="请输入你想要寻找的题库...">
+        </div>
+        <button type="submit" class="btn btn-default">查找</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/network/">回到主页</a></li>
+       <li><a href="/network/personinfoPage">个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--nav of the test page end-->
+
+{% block unextends_block%}
+
+<!--timu picture start-->
+<div style="margin-top:0px; height: 298px;width:100%">
+    
+    <div class="test">
+    <div class="timu">
+      <div>
+        <span><a href="#"><img src="{% static "images/timu1.jpg" %}"alt=""></a></span>
+        <span><a href="#"><img src="{% static "images/timu2.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img src="{% static "images/timu3.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img src="{% static "images/timu4.jpg" %}" alt=""></a></span>
+        <span><a href="#"><img src="{% static "images/timu5.jpg" %}" alt=""></a></span>
+      </div>
+      <div class="array">
+        <a href="javascript:;" class="qian"></a>
+        <a href="javascript:;" class="hou"></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div>
+      <div class="row">
+      <div class="col-md-3">
+        <a href="/network/startquestionPage/"><img src="{% static "images/lianxi1.jpg" %}" alt=""></a>
+      </div>
+      <div class="col-md-3">
+        <a href="/network/startquestionPage/"><img src="{% static "images/lianxi2.jpg" %}" alt=""></a>
+      </div>
+      <div class="col-md-3">
+        <a href="/network/startquestionPage/"><img src="{% static "images/lianxi3.jpg" %}" alt=""></a>
+      </div>
+      <div class="col-md-3">
+      <a href="/network/startquestionPage/"><img src="{% static "images/lianxi4.jpg" %}" alt=""></a>
+      </div>
+    </div>
+</div>
+<!--timu picture end-->
+<!--core of the website start-->
+<div id="core">
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="list-group">
+  <a style="font-size: 16px;" href="#" class="list-group-item active">
+   全部   
+  </a>
+  <a style="font-size: 16px;" href="#" class="list-group-item">考前突击</a>
+  <a style="font-size: 16px;" href="#" class="list-group-item">公司专题</a>
+  <a style="font-size: 16px;" href="#" class="list-group-item">限时活动</a>
+</div>
+  </div>
+
+  <div class="col-md-9">
+          <div class="row">
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core1.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core2.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core3.png" %}" alt=""></a></div>
+  </div> 
+         
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core4.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core5.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core6.png" %}" alt=""></a></div>
+        </div> 
+
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core7.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core8.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core9.png" %}" alt=""></a></div>
+        </div> 
+
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core10.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core11.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core12.png" %}" alt=""></a></div>
+        </div> 
+
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core13.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core14.png" %}" alt=""></a></div>
+          <div class="col-md-4"><a href="#"><img src="{% static "images/core15.png" %}" alt=""></a></div>
+        </div> 
+           
+  </div>
+ 
+</div>  
+
+</div>
+{% endblock %}
+<!--core of the website end-->
+<!--底部开始-->
+                    <div id="bottom" style="width:auto">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!--底部结束-->
+
+</div>
+</div>
+</body>
+</html>
